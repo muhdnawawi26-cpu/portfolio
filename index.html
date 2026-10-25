@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Nawawi - Portfolio (First Draft)</title>
+    <!-- CSS will be added in the next phase -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Muhammad Nawawi Bin Zakaria</h1>
+        <p><em>Web Application Development - Personal Portfolio (First Draft)</em></p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <!-- 1. Home Section -->
+        <section id="home">
+            <h2>Home</h2>
+            <p id="greeting-text">Welcome to my personal portfolio website.</p>
+            <p>I am a third-year Network Computing student at Universiti Malaysia Sarawak (UNIMAS).</p>
+            
+            <!-- Basic JS Feature 1: Simple Button Click -->
+            <button type="button" onclick="updateGreeting()">Click for Greeting</button>
+        </section>
+
+        <hr>
+
+        <!-- 2. About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am currently pursuing a degree in Network Computing at UNIMAS. I am learning front-end web development, software engineering, and computer networking.</p>
+            
+            <h3>Skills (Draft List)</h3>
+            <ul>
+                <li>HTML5, CSS3 & JavaScript</li>
+                <li>Java (Object-Oriented Programming)</li>
+                <li>Database Design & SQL / UML</li>
+                <li>Computer Networking & Systems</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- 3. Projects Section -->
+        <section id="projects">
+            <h2>Projects (Work in Progress)</h2>
+            <p>Below are the 5 academic and web projects for my portfolio:</p>
+
+            <!-- Basic JS Feature 2: Show/Hide Toggle -->
+            <button type="button" onclick="toggleProjects()">Show / Hide Project List</button>
+
+            <div id="project-list">
+                <article>
+                    <h3>1. Personal Portfolio Website</h3>
+                    <p>A responsive personal portfolio built using pure HTML, CSS, and JavaScript for the Web Application Development course.</p>
+                </article>
+
+                <article>
+                    <h3>2. Course Registration System Architecture</h3>
+                    <p>Relational database schema and UML class diagram modeling student course enrollment.</p>
+                </article>
+
+                <article>
+                    <h3>3. Java OOP Cipher & Scoring Application</h3>
+                    <p>Object-Oriented Java program for cipher text encoding and college application scoring.</p>
+                </article>
+
+                <article>
+                    <h3>4. HCI Automotive Interface Study</h3>
+                    <p>Human-Computer Interaction user survey and dashboard interface design research.</p>
+                </article>
+
+                <article>
+                    <h3>5. Network Topology & Routing Lab</h3>
+                    <p>Configured subnetting, VLANs, and routing protocols for a simulated campus network.</p>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 4. Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:nawawi@example.com">nawawi@example.com</a> (Placeholder)</p>
+
+            <!-- Basic JS Feature 3: Simple Form Handling -->
+            <form onsubmit="handleFormSubmit(event)">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" required>
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" rows="3" required></textarea>
+                </p>
+                <button type="submit">Send (Draft Test)</button>
+            </form>
+            <p id="form-status"></p>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Muhammad Nawawi Bin Zakaria. First Draft.</p>
+    </footer>
+
+    <!-- Basic JavaScript for First Draft Check-in -->
+    <script>
+        // 1. Display current year automatically
+        document.getElementById("year").innerText = new Date().getFullYear();
+
+        // 2. Simple DOM text change (W3Schools style)
+        function updateGreeting() {
+            document.getElementById("greeting-text").innerText = "Hello! Thanks for visiting my Web Application Development portfolio draft.";
+        }
+
+        // 3. Simple Show/Hide toggle for projects
+        function toggleProjects() {
+            var list = document.getElementById("project-list");
+            if (list.style.display === "none") {
+                list.style.display = "block";
+            } else {
+                list.style.display = "none";
+            }
+        }
+
+        // 4. Basic form submit confirmation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            var userName = document.getElementById("name").value;
+            document.getElementById("form-status").innerText = "Thank you, " + userName + ". Form test successful!";
+        }
+    </script>
+
+</body>
+</html>
