@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Nawawi - Portfolio (First Draft)</title>
-    <!-- CSS will be added in the next phase -->
+    <meta charset="utf-8">
+    <title>Muhammad Nawawi - Personal Portfolio</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <header>
         <h1>Muhammad Nawawi Bin Zakaria</h1>
-        <p><em>Web Application Development - Personal Portfolio (First Draft)</em></p>
+        <p><em>3rd Year Network Computing | Universiti Malaysia Sarawak (UNIMAS)</em></p>
+        
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -25,126 +25,128 @@
     <hr>
 
     <main>
-        <!-- 1. Home Section -->
         <section id="home">
             <h2>Home</h2>
-            <p id="greeting-text">Welcome to my personal portfolio website.</p>
-            <p>I am a third-year Network Computing student at Universiti Malaysia Sarawak (UNIMAS).</p>
-            
-            <!-- Basic JS Feature 1: Simple Button Click -->
-            <button type="button" onclick="updateGreeting()">Click for Greeting</button>
+            <p id="greeting-text">Welcome to my official portfolio website.</p>
+            <p>Built for the Web Application Development coursework.</p>
+            <button type="button" onclick="displayGreeting()">Click for Greeting</button>
         </section>
 
         <hr>
 
-        <!-- 2. About Me Section -->
         <section id="about">
             <h2>About Me</h2>
-            <p>I am currently pursuing a degree in Network Computing at UNIMAS. I am learning front-end web development, software engineering, and computer networking.</p>
             
-            <h3>Skills (Draft List)</h3>
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Muhammad Nawawi Bin Zakaria Profile Photo" width="160" height="160">
+            </div>
+
+            <p>I am a third-year Bachelor of Computer Science (Hons) in Network Computing student at UNIMAS.</p>
+
+            <h3>Education Background</h3>
+            <table cellspacing="0" cellpadding="5" border="1">
+                <thead>
+                    <tr>
+                        <th>Institution</th>
+                        <th>Duration / Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SM Sains Kuching</td>
+                        <td>2018 - 2022</td>
+                    </tr>
+                    <tr>
+                        <td>PPPU UNIMAS (Physical Science Foundation)</td>
+                        <td>2023 - 2024</td>
+                    </tr>
+                    <tr>
+                        <td>UNIMAS (Network Computing)</td>
+                        <td>2024 - Present</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Leadership &amp; Certifications</h3>
             <ul>
-                <li>HTML5, CSS3 & JavaScript</li>
-                <li>Java (Object-Oriented Programming)</li>
-                <li>Database Design & SQL / UML</li>
-                <li>Computer Networking & Systems</li>
+                <li><strong>Club President:</strong> Hikerholics UNIMAS</li>
+                <li><strong>Project Manager:</strong>
+                    <ul>
+                        <li>Gunung Gading Expedition, Lundu</li>
+                        <li>Sebako Waterfall Program, Lundu</li>
+                        <li>Gunung Santubong Trail Program, Kuching</li>
+                    </ul>
+                </li>
+                <li><strong>Certificate:</strong> NASA Sarawak Spaceship Challenge Hackathon</li>
             </ul>
+
+            <h3>Technical Skills</h3>
+            <dl>
+                <dt>Programming Languages</dt>
+                <dd>C, C++, Java, Python, SQL</dd>
+                <dt>Web Technologies</dt>
+                <dd>HTML, CSS, JavaScript</dd>
+            </dl>
         </section>
 
         <hr>
 
-        <!-- 3. Projects Section -->
         <section id="projects">
-            <h2>Projects (Work in Progress)</h2>
-            <p>Below are the 5 academic and web projects for my portfolio:</p>
+            <h2>Projects</h2>
+            <p>Below are my main academic and leadership projects:</p>
+            
+            <button type="button" onclick="toggleProjectList()">Show / Hide Projects</button>
 
-            <!-- Basic JS Feature 2: Show/Hide Toggle -->
-            <button type="button" onclick="toggleProjects()">Show / Hide Project List</button>
-
-            <div id="project-list">
-                <article>
-                    <h3>1. Personal Portfolio Website</h3>
-                    <p>A responsive personal portfolio built using pure HTML, CSS, and JavaScript for the Web Application Development course.</p>
-                </article>
-
-                <article>
-                    <h3>2. Course Registration System Architecture</h3>
-                    <p>Relational database schema and UML class diagram modeling student course enrollment.</p>
-                </article>
-
-                <article>
-                    <h3>3. Java OOP Cipher & Scoring Application</h3>
-                    <p>Object-Oriented Java program for cipher text encoding and college application scoring.</p>
-                </article>
-
-                <article>
-                    <h3>4. HCI Automotive Interface Study</h3>
-                    <p>Human-Computer Interaction user survey and dashboard interface design research.</p>
-                </article>
-
-                <article>
-                    <h3>5. Network Topology & Routing Lab</h3>
-                    <p>Configured subnetting, VLANs, and routing protocols for a simulated campus network.</p>
-                </article>
+            <div id="project-list-div">
+                <ol type="1">
+                    <li><strong>Java OOP Cipher &amp; Scoring Engine</strong> - Developed in Java using Object-Oriented Principles.</li>
+                    <li><strong>University Course Registration Database</strong> - Relational database schema and UML class modeling.</li>
+                    <li><strong>NASA Hackathon Prototype</strong> - Aerospace problem-solving project under rapid constraints.</li>
+                    <li><strong>Hikerholics Expedition Management</strong> - Project management for 3 major outdoor Sarawak programs.</li>
+                    <li><strong>Responsive Portfolio Web App</strong> - Semantic HTML5, CSS styling, and DOM scripting.</li>
+                </ol>
             </div>
         </section>
 
         <hr>
 
-        <!-- 4. Contact Section -->
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:nawawi@example.com">nawawi@example.com</a> (Placeholder)</p>
+            <h2>Contact Form</h2>
+            <p>Reach out via email (<a href="mailto:muhdnawawi26@gmail.com">muhdnawawi26@gmail.com</a>) or phone (+60132402426).</p>
 
-            <!-- Basic JS Feature 3: Simple Form Handling -->
-            <form onsubmit="handleFormSubmit(event)">
-                <p>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" required>
-                </p>
-                <p>
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" rows="3" required></textarea>
-                </p>
-                <button type="submit">Send (Draft Test)</button>
+            <form name="contactform">
+                <fieldset>
+                    <legend>Client Details</legend>
+                    
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" name="fname" id="fname"><br><br>
+
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" name="lname" id="lname"><br><br>
+
+                    <label for="email">Email Address:</label><br>
+                    <input type="text" name="email" id="email"><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Message Details</legend>
+                    <label for="msg">Comments / Remarks:</label><br>
+                    <textarea name="msg" id="msg" cols="30" rows="4"></textarea><br><br>
+
+                    <input type="button" value="Submit Message" onclick="validateForm()">
+                    <input type="reset" value="Clear Form">
+                </fieldset>
             </form>
-            <p id="form-status"></p>
+            
+            <p id="form-feedback"></p>
         </section>
     </main>
 
     <hr>
 
     <footer>
-        <p>&copy; <span id="year"></span> Muhammad Nawawi Bin Zakaria. First Draft.</p>
+        <p>&copy; 2026 Muhammad Nawawi Bin Zakaria &bull; UNIMAS Network Computing</p>
     </footer>
-
-    <!-- Basic JavaScript for First Draft Check-in -->
-    <script>
-        // 1. Display current year automatically
-        document.getElementById("year").innerText = new Date().getFullYear();
-
-        // 2. Simple DOM text change (W3Schools style)
-        function updateGreeting() {
-            document.getElementById("greeting-text").innerText = "Hello! Thanks for visiting my Web Application Development portfolio draft.";
-        }
-
-        // 3. Simple Show/Hide toggle for projects
-        function toggleProjects() {
-            var list = document.getElementById("project-list");
-            if (list.style.display === "none") {
-                list.style.display = "block";
-            } else {
-                list.style.display = "none";
-            }
-        }
-
-        // 4. Basic form submit confirmation
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            var userName = document.getElementById("name").value;
-            document.getElementById("form-status").innerText = "Thank you, " + userName + ". Form test successful!";
-        }
-    </script>
 
 </body>
 </html>
