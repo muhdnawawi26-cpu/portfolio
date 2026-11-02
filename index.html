@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Muhammad Nawawi - Personal Portfolio</title>
+    <title>Muhammad Nawawi - Internship Portfolio</title>
     <link type="text/css" rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="script.js"></script>
 </head>
-<body>
+<body class="light-mode">
 
     <header>
-        <h1>Muhammad Nawawi Bin Zakaria</h1>
-        <p><em>3rd Year Network Computing | Universiti Malaysia Sarawak (UNIMAS)</em></p>
+        <div class="header-left">
+            <h1>Muhammad Nawawi Bin Zakaria</h1>
+            <p><em>3rd Year Network Computing | Universiti Malaysia Sarawak (UNIMAS)</em></p>
+        </div>
         
+        <div class="header-right">
+            <!-- Light/Dark Mode Toggle Button -->
+            <button type="button" id="theme-toggle-btn" onclick="toggleTheme()">Dark Mode</button>
+        </div>
+
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- Navigation buttons to switch sections -->
+                <li><a href="javascript:void(0);" onclick="showSection('home-profile')">Home &amp; Profile</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('about')">About Me</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,24 +33,34 @@
     <hr>
 
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p id="greeting-text">Welcome to my official portfolio website.</p>
-            <p>Built for the Web Application Development coursework.</p>
-            <button type="button" onclick="displayGreeting()">Click for Greeting</button>
-        </section>
-
-        <hr>
-
-        <section id="about">
-            <h2>About Me</h2>
-            
-            <div class="profile-container">
-                <!-- Updated image path to match root upload -->
-                <img src="profile.jpg" alt="Muhammad Nawawi Bin Zakaria Profile Photo" width="160" height="160">
+        <!-- Home and Profile -->
+        <section id="home-profile" class="page-section active-section">
+            <div class="home-sub">
+                <h2>Home</h2>
+                <p id="greeting-text">Welcome to my professional portfolio website.</p>
+                <button type="button" onclick="displayGreeting()">Click for Greeting</button>
             </div>
 
-            <p>I am a third-year Bachelor of Computer Science (Hons) in Network Computing student at UNIMAS.</p>
+            <hr>
+
+            <div class="profile-sub">
+                <h2>Profile</h2>
+                <div class="profile-flex">
+                    <img src="profile.jpg" alt="Muhammad Nawawi Bin Zakaria Profile Photo" width="160" height="160">
+                    <div class="profile-info">
+                        <p><strong>Name:</strong> Muhammad Nawawi Bin Zakaria</p>
+                        <p><strong>University:</strong> Universiti Malaysia Sarawak (UNIMAS)</p>
+                        <p><strong>Course:</strong> Bachelor of Computer Science (Hons) in Network Computing</p>
+                        <p><strong>Email:</strong> muhdnawawi26@gmail.com</p>
+                        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammad-nawawi-bin-zakaria-774948335" target="_blank">Profile Link</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section (Hidden by default, shown on click) -->
+        <section id="about" class="page-section hidden-section">
+            <h2>About Me</h2>
 
             <h3>Education Background</h3>
             <table cellspacing="0" cellpadding="5" border="1">
@@ -68,7 +86,8 @@
                 </tbody>
             </table>
 
-            <h3>Leadership &amp; Certifications</h3>
+            <!-- Leadership -->
+            <h3>Leadership</h3>
             <ul>
                 <li><strong>Club President:</strong> Hikerholics UNIMAS</li>
                 <li><strong>Project Manager:</strong>
@@ -78,21 +97,31 @@
                         <li>Gunung Santubong Trail Program, Kuching</li>
                     </ul>
                 </li>
-                <li><strong>Certificate:</strong> NASA Sarawak Spaceship Challenge Hackathon</li>
             </ul>
 
+            <!-- Cert -->
+            <h3>Certifications</h3>
+            <ul>
+                <li>NASA Sarawak Spaceship Challenge Hackathon</li>
+                <li>Cyber Security Analyst (C3SA)</li>
+            </ul>
+
+            <!-- Skill list -->
             <h3>Technical Skills</h3>
-            <dl>
-                <dt>Programming Languages</dt>
-                <dd>C, C++, Java, Python, SQL</dd>
-                <dt>Web Technologies</dt>
-                <dd>HTML, CSS, JavaScript</dd>
-            </dl>
+            <div class="skills-vertical">
+                <p>C Programming</p>
+                <p>C++</p>
+                <p>Java</p>
+                <p>Python</p>
+                <p>SQL</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+            </div>
         </section>
 
-        <hr>
-
-        <section id="projects">
+        <!-- Projects Section (Hidden by default, shown on click) -->
+        <section id="projects" class="page-section hidden-section">
             <h2>Projects</h2>
             <p>Below are my main academic and leadership projects:</p>
             
@@ -109,9 +138,8 @@
             </div>
         </section>
 
-        <hr>
-
-        <section id="contact">
+        <!-- Contact Section (Hidden by default, shown on click) -->
+        <section id="contact" class="page-section hidden-section">
             <h2>Contact Form</h2>
             <p>Reach out via email (<a href="mailto:muhdnawawi26@gmail.com">muhdnawawi26@gmail.com</a>) or phone (+60132402426).</p>
 
@@ -146,7 +174,7 @@
     <hr>
 
     <footer>
-        <p>&copy; 2026 Muhammad Nawawi Bin Zakaria &bull; UNIMAS Network Computing</p>
+        <p>&copy; 2026 Muhammad Nawawi Bin Zakaria &bull; Ready for Internship</p>
     </footer>
 
 </body>
