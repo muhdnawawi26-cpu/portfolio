@@ -1,71 +1,37 @@
-function displayGreeting() {
-    var greetingP = document.getElementById("greeting-text");
-    greetingP.innerHTML = "Hello! Thank you for reviewing my portfolio.";
-}
-
-function toggleProjectList() {
-    var pList = document.getElementById("project-list-div");
-    if (pList.style.display === "none") {
-        pList.style.display = "block";
-    } else {
-        pList.style.display = "none";
+// Set dynamic greeting based on time of day
+function setGreeting() {
+    const hour = new Date().getHours();
+    let greeting = "Good evening";
+    
+    if (hour >= 5 && hour < 12) {
+        greeting = "Good morning";
+    } else if (hour >= 12 && hour < 18) {
+        greeting = "Good afternoon";
+    }
+    
+    const titleElement = document.getElementById("greeting-title");
+    if (titleElement) {
+        titleElement.innerHTML = `${greeting}, I'm Muhammad Nawawi`;
     }
 }
 
-/* Function to show clicked section and hide others */
-function showSection(sectionId) {
-    var sections = document.getElementsByClassName("page-section");
-    for (var i = 0; i < sections.length; i++) {
-        sections[i].classList.remove("active-section");
-        sections[i].classList.add("hidden-section");
-    }
-    var targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-        targetSection.classList.remove("hidden-section");
-        targetSection.classList.add("active-section");
-    }
-}
-
-/* Light / Dark Mode Toggle Function */
+// Light / Dark Mode Toggle Logic
 function toggleTheme() {
-    var bodyTag = document.body;
-    var themeBtn = document.getElementById("theme-toggle-btn");
-
-    if (bodyTag.classList.contains("light-mode")) {
-        bodyTag.classList.remove("light-mode");
-        bodyTag.classList.add("dark-mode");
-        themeBtn.innerHTML = "Light Mode";
+    const body = document.body;
+    const themeBtn = document.getElementById("theme-toggle");
+    
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+        themeBtn.innerText = "Dark mode";
     } else {
-        bodyTag.classList.remove("dark-mode");
-        bodyTag.classList.add("light-mode");
-        themeBtn.innerHTML = "Dark Mode";
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+        themeBtn.innerText = "Light mode";
     }
 }
 
-function validateForm() {
-    var fname = document.getElementById("fname").value;
-    var email = document.getElementById("email").value;
-    var feedback = document.getElementById("form-feedback");
-
-    try {
-        if (fname == "") {
-            throw "First name field cannot be empty.";
-        }
-        if (email == "") {
-            throw "Email field cannot be empty.";
-        }
-        if (email.indexOf("@") == -1) {
-            throw "Invalid email address (missing @ symbol).";
-        }
-
-        feedback.style.color = "green";
-        feedback.innerHTML = "Success! Message prepared for submission.";
-    } 
-    catch(err) {
-        feedback.style.color = "red";
-        feedback.innerHTML = "Error: " + err;
-    }
-    finally {
-        console.log("Validation check completed.");
-    }
-}
+// Initialize scripts when page loads
+window.onload = function() {
+    setGreeting();
+};
